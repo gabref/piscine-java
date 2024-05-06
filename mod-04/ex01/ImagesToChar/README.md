@@ -8,7 +8,7 @@ Having java and javac installed and available in PATH env variable.
 
 ### Compile
 ```bash
-mkdir target; find src -type f -name "*.java" | xargs javac -cp src -d target
+mkdir -p target; find src -type f -name "*.java" | xargs javac -cp src -d target
 ```
 
 ### Arquive
