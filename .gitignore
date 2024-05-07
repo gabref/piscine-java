@@ -2,3 +2,7 @@
 result.txt
 java_root
 target
+.settings
+.project
+.classpath
+dependency-reduced-pom.xml
