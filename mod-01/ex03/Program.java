@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class Program {
 	public static void main(String[] args) {
 		try {
@@ -7,11 +9,17 @@ public class Program {
 			User minato = new User("minato", 700);
 
 			Transaction t1 = new Transaction(naruto, minato, Transaction.Category.debit, -120);
-			Transaction t2 = new Transaction(naruto, galves, Transaction.Category.credit, -100);
-			Transaction t3 = new Transaction(minato, naruto, Transaction.Category.credit, -50);
-			Transaction t4 = new Transaction(minato, galves, Transaction.Category.credit, -77);
+			Transaction t2 = new Transaction(naruto, galves, Transaction.Category.credit, 100);
+			Transaction t3 = new Transaction(minato, naruto, Transaction.Category.credit, 50);
+			Transaction t4 = new Transaction(minato, galves, Transaction.Category.credit, 77);
 			Transaction t5 = new Transaction(galves, naruto, Transaction.Category.debit, -100);
 			Transaction t6 = new Transaction(galves, minato, Transaction.Category.debit, -30);
+			t1.makeTransaction();
+			t2.makeTransaction();
+			t3.makeTransaction();
+			t4.makeTransaction();
+			t5.makeTransaction();
+			t6.makeTransaction();
 
 			TransactionsLinkedList list = new TransactionsLinkedList();
 			list.addTransaction(t1);
@@ -61,9 +69,7 @@ public class Program {
 			list.printLinkedList();
 
 			System.out.println("To array");
-			Transaction[] arr = list.toArray();
-			for (int i = 0; i < arr.length; i++)
-				System.out.println(arr[i].getAmount());
+			System.out.println(Arrays.toString(list.toArray()));
 
 		} catch (Exception e) {
 			System.out.println("An Exception occurred\n========================");

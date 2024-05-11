@@ -21,13 +21,13 @@ public class NumberWorkerTest extends Assert {
 	}
 
 	@ParameterizedTest
-	@ValueSource(ints = { 2, 3, 5, 73 })
+	@ValueSource(ints = { 2, 3, 5, 53, 191 })
 	public void isPrimeForPrime(final int number) throws IllegalNumberException {
 		assertTrue(numberWorker.isPrime(number));
 	}
 
 	@ParameterizedTest
-	@ValueSource(ints = { 4, 8, 28, 125 })
+	@ValueSource(ints = { 4, 8, 24, 265 })
 	public void isPrimeForNotPrime(final int number) throws IllegalNumberException {
 		assertFalse(numberWorker.isPrime(number));
 	}
